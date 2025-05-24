@@ -921,7 +921,6 @@ a:focus {
 
 
 
-
 /*******************************/
 /********* Contact CSS *********/
 /*******************************/
@@ -929,93 +928,70 @@ a:focus {
     position: relative;
     width: 100%;
     margin: 45px 0;
-    background: #002244;
+    background: #002244; /* Deep blue background */
     color: #ffffff;
+    padding: 60px 0; /* Space around the contact section */
 }
 
 .contact h2 {
-    color: #ffffff;
+    color: #ffffff; /* White heading text */
     font-size: 36px;
     margin-bottom: 30px;
 }
 
-.contact .container-fluid {
-    background: url(../img/contact.jpg) left center no-repeat;
-    background-size: contain;
-}
-
 .contact .contact-form {
-    position: relative;
-    padding: 90px 0 90px 45px;
-    background: #002244;
+    background: #002244; /* Form background */
+    padding: 40px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
-.contact .contact-form input {
-    color: #ffffff;
-    padding: 15px 0;
+.contact .contact-form input,
+.contact .contact-form textarea {
+    color: #ffffff; /* White text */
+    padding: 10px;
     background: none;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    border-radius: 5px; /* Rounded fields */
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .contact .contact-form textarea {
-    color: #ffffff;
-    height: 90px;
-    padding: 15px 0;
-    background: none;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    height: 120px;
 }
 
 .contact .contact-form .form-control::placeholder {
     color: #ffffff;
-    opacity: 1;
+    opacity: 0.8;
 }
 
-.contact .contact-form .form-control:-ms-input-placeholder,
-.contact .contact-form .form-control::-ms-input-placeholder {
-    color: #ffffff;
-}
-
+/* Updated Button Styling */
 .contact .contact-form .btn {
-    margin-top: 35px;
-    color: #002244;
-    background: #ffffff;
-    box-shadow: inset 0 0 0 50px #ffffff;
+    margin-top: 10px;
+    color: #ffffff; /* White text */
+    background: #004080; /* Slightly lighter deep blue background */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 .contact .contact-form .btn:hover {
-    color: #ffffff;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #ffffff;
-    border-color: #ffffff;
-}
-
-.contact .help-block ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-size: 14px;
-    font-style: italic;
-    color: #ffffff;
+    color: #004080; /* Deep blue text on hover */
+    background: #ffffff; /* White background on hover */
+    border: 1px solid #004080;
 }
 
 @media (max-width: 767.98px) {
-    .contact .container-fluid {
-        background: none;
-    }
-    
-    .contact .contact-form {
-        padding: 60px 15px;
-    }
-
     .contact h2 {
         font-size: 28px;
     }
-}
 
+    .contact .contact-form {
+        padding: 20px;
+    }
+}
 
 
 
@@ -1178,24 +1154,27 @@ a:focus {
 /*      DARK MODE        */
 /* ===================== */
 body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+/* General text and headings */
+body.dark-mode, 
+body.dark-mode * {
+    color: #e0e0e0 !important;
 }
 
 body.dark-mode a,
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode h6 {
-    color: #f1f1f1;
+body.dark-mode a:hover,
+body.dark-mode a:focus {
+    color: #90caf9 !important; /* light blue links */
 }
 
+/* Navbar */
 body.dark-mode .navbar,
 body.dark-mode .navbar.nav-sticky {
     background-color: #1e1e1e !important;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2) !important;
 }
 
 body.dark-mode .navbar .navbar-brand,
@@ -1203,24 +1182,225 @@ body.dark-mode .navbar-light .navbar-nav .nav-link {
     color: #ffffff !important;
 }
 
+/* Buttons */
 body.dark-mode .btn {
+    background-color: #e0e0e0 !important;
+    color: #121212 !important;
+    border: none !important;
+}
+
+body.dark-mode .btn:hover {
+    background-color: transparent !important;
+    border: 1px solid #e0e0e0 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Scrollbar */
+body.dark-mode ::-webkit-scrollbar {
+    width: 8px !important;
+}
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #444 !important;
+    border-radius: 10px !important;
+}
+
+/* ===================== */
+/* Specific Sections */
+/* ===================== */
+
+/* Home section */
+body.dark-mode .home,
+body.dark-mode .home * {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+/* Contact section */
+body.dark-mode .contact,
+body.dark-mode .contact * {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .contact-form {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body.dark-mode .contact-form input::placeholder,
+body.dark-mode .contact-form textarea::placeholder {
+    color: #ccc !important;
+}
+
+/* Footer */
+body.dark-mode footer,
+body.dark-mode footer * {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode footer a,
+body.dark-mode footer a:hover,
+body.dark-mode footer a:focus {
+    color: #90caf9 !important;
+}
+
+/* Dark mode overrides for Hero Section */
+body.dark-mode .hero {
+    background: linear-gradient(rgba(18, 18, 18, 0.95), rgba(18, 18, 18, 0.95)); /* remove bg image */
+    /* or you can keep a darker overlay, but no image */
+}
+
+body.dark-mode .hero .hero-text p,
+body.dark-mode .hero .hero-text h1,
+body.dark-mode .hero .hero-text h2,
+body.dark-mode .hero .hero-text .typed-cursor {
+    color: #e0e0e0 !important; /* light text */
+}
+
+body.dark-mode .hero .hero-btn .btn {
+    background-color: #e0e0e0 !important;
+    color: #121212 !important;
+    box-shadow: inset 0 0 0 50px #e0e0e0 !important;
+    border: none !important;
+}
+
+body.dark-mode .hero .hero-btn .btn:hover {
+    color: #e0e0e0 !important;
+    background: transparent !important;
+    box-shadow: inset 0 0 0 0 #e0e0e0 !important;
+    border-color: #e0e0e0 !important;
+}
+
+/* Dark mode overrides for Footer */
+body.dark-mode .footer {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer .footer-info h2,
+body.dark-mode .footer .footer-info h3,
+body.dark-mode .footer .footer-menu p,
+body.dark-mode .footer .footer-menu a,
+body.dark-mode .footer .footer-social a i,
+body.dark-mode .footer .copyright p,
+body.dark-mode .footer .copyright p a {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .footer .footer-menu a:hover {
+    color: #bbbbbb !important;
+}
+
+body.dark-mode .footer .footer-social a:hover i {
+    color: #999999 !important;
+}
+
+body.dark-mode .footer .copyright::before {
+    background: rgba(224, 224, 224, 0.2) !important;
+}
+
+/* Dark mode overrides for About section */
+body.dark-mode .about {
+    background-color: #121212; /* Dark background for whole about section */
+    color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode .about .about-text p,
+body.dark-mode .about .skill-name p {
+    color: #e0e0e0;
+}
+
+body.dark-mode .about .progress {
+    background: #333333; /* Darker background for progress bar container */
+}
+
+body.dark-mode .about .progress .progress-bar {
+    background: #3399ff; /* Brighter blue for progress bar */
+}
+
+/* Ensure links or buttons adapt if any */
+body.dark-mode .about .about-text a.btn {
     background-color: #e0e0e0;
     color: #121212;
     border: none;
 }
 
-body.dark-mode .btn:hover {
+body.dark-mode .about .about-text a.btn:hover {
     background-color: transparent;
-    border: 1px solid #e0e0e0;
     color: #e0e0e0;
+    border: 1px solid #e0e0e0;
 }
 
-/* Scrollbar (optional) */
-body.dark-mode ::-webkit-scrollbar {
-    width: 8px;
-}
-body.dark-mode ::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 10px;
+/* Dark mode overrides for Experience section */
+body.dark-mode .experience .timeline::after {
+    background: #3399ff; /* Bright blue timeline line */
 }
 
+body.dark-mode .experience .timeline .timeline-item::after {
+    background: #121212; /* Dark background inside the circle */
+    border-color: #3399ff; /* Blue border for circle */
+}
+
+body.dark-mode .experience .timeline .timeline-item::before {
+    border-color: transparent transparent transparent #555555; /* Darker arrow color */
+}
+
+body.dark-mode .experience .timeline .timeline-item.right::before {
+    border-color: transparent #555555 transparent transparent;
+}
+
+body.dark-mode .experience .timeline .timeline-date {
+    color: #3399ff; /* Bright blue dates */
+}
+
+body.dark-mode .experience .timeline .timeline-text {
+    background: #1e1e1e; /* Dark card background */
+    border-right-color: #555555; /* Darker border */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    color: #e0e0e0; /* Light text */
+}
+
+body.dark-mode .experience .timeline .timeline-item.right .timeline-text {
+    border-left-color: #555555;
+}
+
+/* Dark mode overrides for Projects section */
+body.dark-mode .projects .section-header p,
+body.dark-mode .projects .section-header h2 {
+    color: #66b2ff; /* lighter blue for headings */
+}
+
+body.dark-mode .project-wrap {
+    background: #121212;
+    box-shadow: 0 0 15px rgba(0, 102, 204, 0.8);
+}
+
+body.dark-mode .project-text {
+    color: #cce6ff;
+}
+
+body.dark-mode .project-text h3 {
+    color: #99ccff;
+}
+
+body.dark-mode .projects .project-text .btn {
+    background-color: #3399ff;
+    color: #fff;
+}
+
+body.dark-mode .projects .project-text .btn:hover {
+    background-color: #66b2ff;
+    color: #002244;
+}
+
+body.dark-mode .project-img img {
+    filter: brightness(0.85);
+}
