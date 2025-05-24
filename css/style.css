@@ -832,6 +832,7 @@ a:focus {
 /******** Projects CSS ********/
 
 /****************************  */
+
 .projects {
   position: relative;
   padding: 45px 0 15px;
@@ -851,18 +852,18 @@ a:focus {
   margin-bottom: 40px;
 }
 
-/* Projects container is flexbox to center items with spacing */
+/* REMOVE flexbox on projects-container to let Bootstrap grid work properly */
+/* Just keep Bootstrap's row styles */
 .projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  /* Removed flexbox styles to avoid conflict with Bootstrap grid */
 }
 
-/* Each project item uses bootstrap grid, but remove float issues by flex */
+/* Instead, add gap between project items by margin */
 .project-item {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px; /* space between rows */
+  /* Bootstrap columns already have horizontal padding */
 }
 
 .project-wrap {
@@ -913,7 +914,14 @@ a:focus {
   padding-left: 20px;
   font-size: 14px;
   list-style-type: disc;
-  margin: 0;
+  margin: 0 0 10px 0; /* Added margin-bottom for spacing */
+}
+
+/* Buttons container for inline buttons with spacing */
+.project-text .btn-group {
+  display: inline-flex;
+  gap: 10px; /* space between buttons */
+  margin-top: 15px; /* space above buttons */
 }
 
 .projects .project-text .btn {
@@ -933,6 +941,7 @@ a:focus {
   background-color: #004080;
   color: #fff;
 }
+
 
 /******************************  */
 
