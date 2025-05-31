@@ -828,9 +828,7 @@ a:focus {
 }
 
 /******************************  */
-
 /******** Projects CSS ********/
-
 /****************************  */
 
 .projects {
@@ -852,18 +850,35 @@ a:focus {
   margin-bottom: 40px;
 }
 
-/* REMOVE flexbox on projects-container to let Bootstrap grid work properly */
-/* Just keep Bootstrap's row styles */
+/* Removed flexbox on .projects-container to use Bootstrap grid */
 .projects-container {
-  /* Removed flexbox styles to avoid conflict with Bootstrap grid */
+  /* Keeping default Bootstrap row behavior */
+  flex-wrap: wrap;
 }
 
-/* Instead, add gap between project items by margin */
+/* Add gap between project items */
 .project-item {
   display: flex;
   flex-direction: column;
   margin-bottom: 30px; /* space between rows */
-  /* Bootstrap columns already have horizontal padding */
+}
+
+/* Optional: smoother View More transition */
+#more-projects {
+  display: none;
+  flex-wrap: wrap; /* Ensure grid layout */
+  transition: all 0.5s ease;
+}
+
+/* Optional: Smooth fade effect for View More items */
+#more-projects.show {
+  display: flex !important;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 .project-wrap {
@@ -908,20 +923,17 @@ a:focus {
 .project-text p {
   font-size: 16px;
   margin-bottom: 12px;
+  line-height: 1.5; /* Improve readability for long paragraphs */
 }
 
 .project-text ul {
-  padding-left: 20px;
-  font-size: 14px;
-  list-style-type: disc;
-  margin: 0 0 10px 0; /* Added margin-bottom for spacing */
+  display: none;
 }
 
-/* Buttons container for inline buttons with spacing */
 .project-text .btn-group {
   display: inline-flex;
-  gap: 10px; /* space between buttons */
-  margin-top: 15px; /* space above buttons */
+  gap: 10px;
+  margin-top: 15px;
 }
 
 .projects .project-text .btn {
@@ -941,6 +953,20 @@ a:focus {
   background-color: #004080;
   color: #fff;
 }
+
+/* Optional: Improve responsiveness for small screens */
+@media (max-width: 768px) {
+  .project-text h3 {
+    font-size: 20px;
+  }
+  .project-text p {
+    font-size: 14px;
+  }
+  .projects .section-header h2 {
+    font-size: 28px;
+  }
+}
+
 
 
 /******************************  */
@@ -1125,7 +1151,7 @@ a:focus {
 }
 
 .footer .footer-social a:hover i {
-  color: #ccc;
+  color: #4c5457;
 }
 
 .footer .copyright {
